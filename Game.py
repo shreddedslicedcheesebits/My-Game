@@ -35,4 +35,4 @@ So, now you can have it all!
 Forever.
 All the fancy decorations and food,
 in this mansion you will spend eternity
-alone.
+alone.""")
