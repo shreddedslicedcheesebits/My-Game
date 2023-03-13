@@ -1,4 +1,4 @@
-import opening.py
+from opening import *
 #Items
 
 #starting room
