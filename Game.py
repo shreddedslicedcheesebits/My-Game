@@ -1,10 +1,13 @@
 from opening import *
 from FloorMaps import *
+from current_room import *
 #Items
 #opening
 opening()
 #Selection Menu
 c = None
+floor=1
+room="Start"
 while c != "q":
 	c = input(f"""
 {"|-------Menu-------|":^20}
@@ -18,6 +21,9 @@ while c != "q":
 {"Walk Right  d":^20}
 {"Surrender  q":^20}
 \nType Movement\n""")
+	if c == "2":
+		a = CurrentRoom()
+		print(a.get_room(floor,room))
 	if c == "3":
 		floor = int(input(f"""
 {"--Select a floor--":^20}
