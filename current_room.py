@@ -67,5 +67,8 @@ class CurrentRoom:
 "2": {}
 }
 
+def get_room(self, floor, room):
+	return self.room[floor][room]
+
 
 
