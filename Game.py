@@ -6,7 +6,7 @@ from current_room import *
 opening()
 #Selection Menu
 c = None
-floor=1
+floor="1"
 room="Start"
 while c != "q":
 	c = input(f"""
@@ -22,8 +22,14 @@ while c != "q":
 {"Surrender  q":^20}
 \nType Movement\n""")
 	if c == "2":
-		a = CurrentRoom()
-		print(a.get_room(floor,room))
+		# Create an instance of the CurrentRoom class
+		game_map = CurrentRoom()
+		# Retrieve the name of the current room from the map
+		current_room_name = game_map.get_room(floor, room)
+		# Display the current room name
+		print(f"""{"You are currently in the":^30}\n {current_room_name}""")
+		print(f"""\n{"Type any key to close":^20}""")
+		interaction()
 	if c == "3":
 		floor = int(input(f"""
 {"--Select a floor--":^20}
