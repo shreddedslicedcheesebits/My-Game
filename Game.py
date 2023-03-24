@@ -6,8 +6,7 @@ from current_room import *
 opening()
 #Selection Menu
 c = None
-floor="1"
-room="Start"
+current = 1,0,0
 while c != "q":
 	c = input(f"""
 {"|-------Menu-------|":^20}
@@ -25,7 +24,7 @@ while c != "q":
 		# Create an instance of the CurrentRoom class
 		game_map = CurrentRoom()
 		# Retrieve the name of the current room from the map
-		current_room_name = game_map.get_room(floor, room)
+		current_room_name = game_map.get_room(current)
 		# Display the current room name
 		print(f"""{"You are currently in the":^30}\n {current_room_name}""")
 		print(f"""\n{"Type any key to close":^20}""")
