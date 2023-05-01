@@ -26,11 +26,12 @@ while c != "q":
 		# Retrieve the name of the current room from the map
 		current_room_name = game_map.get_room(current)
 		# Display the current room name
-		print(f"""{"You are currently in the":^30}\n {current_room_name}""")
+		print(f"""{"You are currently in the:":^30}\n {current_room_name}""")
 		print(f"""\n{"Type any key to close":^20}""")
 		interaction()
 	if c == "3":
-		floor = int(input(f"""
+		try:
+			floor = int(input(f"""
 {"--Select a floor--":^20}
 {"Basement  0":^20}
 {"First floor  1":^20}
@@ -38,8 +39,126 @@ while c != "q":
 {"Third Floor  3":^20}
 
 {"Floor":<} """))
-		floor_map(floor)
-		print(f"""\n{"Type any key to close":^20}""")
-		interaction()
+			floor_map(floor)
+			print(f"""\n{"Type any key to close":^20}""")
+			interaction()
+		except:
+			print("That wasn't a floor")
+			interaction()
+	if c == "w":
+		floor,x,y = current
+		if floor == 0:
+			print("Cannot move forward or backward")
+		elif floor == 1:
+			if y != 0:
+				print("Cannot move forward")
+			else:
+				if x not in range(0,2):
+					print("Cannot move forward")
+					interaction()
+				else:
+					x+=1
+					print(floor,x,y)
+					current = floor,x,y
+		elif floor == 2:
+			if y != 0:
+				print("Cannot move forward")
+			else:
+				if x not in range(-1,1):
+					print("Cannot move forward")
+					interaction()
+				else:
+					x+=1
+					print(floor,x,y)
+					current = floor,x,y
+		elif floor == 3:
+			if y != 0:
+				print("Cannot move forward")
+			else:
+				if x not in range(-1,1):
+					print("Cannot move forward")
+					interaction()
+				else:
+					x+=1
+					print(floor,x,y)
+					current = floor,x,y
+	if c == "s":
+		floor,x,y = current
+		if floor == 0:
+			print("Cannot move forward or backward")
+		elif floor == 1:
+			if y != 0:
+				print("Cannot move forward")
+			else:
+				if x not in range(1,3):
+					print("Cannot move backward")
+					interaction()
+				else:
+					x-=1
+					current = floor,x,y
+		elif floor == 2:
+			if y != 0:
+				print("Cannot move forward")
+			else:
+				if x not in range(0,2):
+					print("Cannot move backward")
+					interaction()
+				else:
+					x-=1
+					current = floor,x,y
+		elif floor == 3:
+			if y != 0:
+				print("Cannot move forward")
+			else:
+				if x not in range(0,2):
+					print("Cannot move backward")
+					interaction()
+				else:
+					x-=1
+					current = floor,x,y
+	if c == "a":
+		floor,x,y = current
+		if floor == 0:
+			if y != 1:
+				print("Cannot move left")
+				interaction()
+			else:
+				y-= 1
+				current = floor,x,y
+		elif floor == 1:
+			if x != 2:
+				print("Cannot move left")
+				interaction()
+			else:
+				if y not in range(-1,2):
+					print("Cannot move left")
+					interaction()
+				else:
+					y-= 1
+					current = floor,x,y
+		elif floor == 2:
+			if x != 0:
+				print("Cannot move left")
+				interaction()
+			else:
+				if y not in range(0,2):
+					print("Cannot move left")
+					interaction()
+				else:
+					y-= 1
+					current = floor,x,y
+		elif floor == 3:
+			if x not in range(-1,1):
+				print("Cannot move left")
+				interaction()
+			else:
+				if y not in range(0,1):
+					print("Cannot move left")
+					interaction()
+				else:
+					y-= 1
+					current = floor,x,y
+
+
 
 #starting room
