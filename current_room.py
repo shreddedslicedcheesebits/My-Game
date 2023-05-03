@@ -1,17 +1,18 @@
 class CurrentRoom:
-	def __init__(self):
-		self.room = {
-			1: {
-				0: {
-					0:"""
+    def __init__(self):
+        self.room = {
+            1: {
+                0: {
+                    0:"""
     |---|--------\  \--------|---|
     |                            |
     |          Starting          |
     |            Room            |
     |                            |
-    |----------------------------|"""},
-				1: {
-					0:"""
+    |----------------------------|"""
+                },
+                1: {
+                    0:"""
     |                    |
     |                    |
     |                    |
@@ -22,9 +23,10 @@ class CurrentRoom:
     |                    |
     |                    |
     |                    |
-    |                    |"""},
-				2: {
-					0: """
+    |                    |"""
+                },
+                2: {
+                    0:"""
     |-----------------------------------|
     |                                   |
     |                                   |
@@ -39,14 +41,14 @@ class CurrentRoom:
     |                                   |
     |                                   |
     |------|                    |-------|""",
-					1: """
+                    1:"""
     |-------|
     |       |
     \ Sword |
     \Display|
     |       |
     |-------|""",
-					-1: """
+                    -1:"""
     |-------|
     |       |
     |       |
@@ -59,16 +61,18 @@ class CurrentRoom:
     |       |
     |       |
     |-------|""",
-					-2: """
+                    -2:"""
     |-------|
     | Chefs |
     |       \ 
     |Kitchen|
-    |-------|""",
-			},
-			2: {}
-			}
-		}
-	def get_room(self,current):
-			floor,x,y = current
-			return self.room[floor][x][y]
+    |-------|"""
+                }
+            },
+            2: {}
+        }
+
+    def get_room(self, current):
+        floor, x, y = current
+        print(floor, x, y)
+        return self.room[floor][x][y]
