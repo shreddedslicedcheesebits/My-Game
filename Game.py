@@ -52,6 +52,7 @@ while c != "q":
 		elif floor == 1:
 			if y != 0:
 				print("Cannot move forward")
+				interaction()
 			else:
 				if x not in range(0,2):
 					print("Cannot move forward")
@@ -88,7 +89,8 @@ while c != "q":
 			print("Cannot move forward or backward")
 		elif floor == 1:
 			if y != 0:
-				print("Cannot move forward")
+				print("Cannot move backward")
+				interaction()
 			else:
 				if x not in range(1,3):
 					print("Cannot move backward")
@@ -158,6 +160,49 @@ while c != "q":
 				else:
 					y-= 1
 					current = floor,x,y
+	if c == "d":
+		floor,x,y = current
+		if floor == 0:
+			if y != 0:
+				print("Cannot move right")
+				interaction()
+			else:
+				y+= 1
+				current = floor,x,y
+		elif floor == 1:
+			if x != 2:
+				print("Cannot move right")
+				interaction()
+			else:
+				if y not in range(-2,1):
+					print("Cannot move right")
+					interaction()
+				else:
+					y+= 1
+					current = floor,x,y
+		elif floor == 2:
+			if x != 0:
+				print("Cannot move right")
+				interaction()
+			else:
+				if y not in range(-1,1):
+					print("Cannot move right")
+					interaction()
+				else:
+					y+= 1
+					current = floor,x,y
+		elif floor == 3:
+			if x not in range(-1,1):
+				print("Cannot move right")
+				interaction()
+			else:
+				if y not in range(0,1):
+					print("Cannot move right")
+					interaction()
+				else:
+					y-= 1
+					current = floor,x,y
+
 
 
 
