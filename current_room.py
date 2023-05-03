@@ -115,8 +115,21 @@ class CurrentRoom:
     |                   |
     |-------------------|"""
                 }
-            }
-        }
+            },
+            3: {
+                0: {
+                    0:"""
+    |-----------  \       \  -----------|
+    |                                   |
+    |                                   |
+    \          Grand Staircase          \ 
+    \                                   \ 
+    |                                   |
+    |                                   |
+    |-------                     -------|""",
+				}
+			}
+		}
 
     def get_room(self, current):
         floor, x, y = current
