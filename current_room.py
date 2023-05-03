@@ -110,7 +110,6 @@ class CurrentRoom:
                 },
                 -1: {
                     0:"""
-    |                   |
     |---\ \-------\ \---|
     |     Bathroom      |
     |                   |
