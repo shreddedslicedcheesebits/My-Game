@@ -7,7 +7,7 @@ from Interact import *
 opening()
 #Selection Menu
 c = None
-current = 0,0,0
+current = 1,0,0
 inventory = []
 while c != "q":
 	c = input(f"""

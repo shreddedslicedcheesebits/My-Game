@@ -9,4 +9,5 @@ def interact(current,inventory):
 		if "Shiny Coin" not in inventory:
 			inventory.append("Shiny Coin")
 			print("\"Shiny Coin\" added to inventory")
+			interaction()
 	return inventory
