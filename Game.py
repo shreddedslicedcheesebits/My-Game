@@ -6,7 +6,7 @@ from current_room import *
 opening()
 #Selection Menu
 c = None
-current = 1,0,0
+current = 3,0,0
 while c != "q":
 	c = input(f"""
 {"|-------Menu-------|":^20}
@@ -49,6 +49,7 @@ while c != "q":
 		floor,x,y = current
 		if floor == 0:
 			print("Cannot move forward or backward")
+			interaction()
 		elif floor == 1:
 			if y != 0:
 				print("Cannot move forward")
@@ -64,6 +65,7 @@ while c != "q":
 		elif floor == 2:
 			if y != 0:
 				print("Cannot move forward")
+				interaction()
 			else:
 				if x not in range(-1,1):
 					print("Cannot move forward")
@@ -75,6 +77,7 @@ while c != "q":
 		elif floor == 3:
 			if y != 0:
 				print("Cannot move forward")
+				interaction()
 			else:
 				if x not in range(-1,1):
 					print("Cannot move forward")
@@ -87,6 +90,7 @@ while c != "q":
 		floor,x,y = current
 		if floor == 0:
 			print("Cannot move forward or backward")
+			interaction()
 		elif floor == 1:
 			if y != 0:
 				print("Cannot move backward")
@@ -100,7 +104,8 @@ while c != "q":
 					current = floor,x,y
 		elif floor == 2:
 			if y != 0:
-				print("Cannot move forward")
+				print("Cannot move backward")
+				interaction()
 			else:
 				if x not in range(0,2):
 					print("Cannot move backward")
@@ -110,7 +115,8 @@ while c != "q":
 					current = floor,x,y
 		elif floor == 3:
 			if y != 0:
-				print("Cannot move forward")
+				print("Cannot move backward")
+				interaction()
 			else:
 				if x not in range(0,2):
 					print("Cannot move backward")
@@ -154,7 +160,7 @@ while c != "q":
 				print("Cannot move left")
 				interaction()
 			else:
-				if y not in range(0,1):
+				if y not in range(0,2):
 					print("Cannot move left")
 					interaction()
 				else:
@@ -196,11 +202,11 @@ while c != "q":
 				print("Cannot move right")
 				interaction()
 			else:
-				if y not in range(0,1):
+				if y not in range(-1,1):
 					print("Cannot move right")
 					interaction()
 				else:
-					y-= 1
+					y+= 1
 					current = floor,x,y
 
 
