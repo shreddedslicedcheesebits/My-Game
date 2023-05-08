@@ -208,6 +208,8 @@ while c != "q":
 				else:
 					y+= 1
 					current = floor,x,y
+if c == "q":
+	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou chose to spend eternity in this mansion\n")
 
 
 
