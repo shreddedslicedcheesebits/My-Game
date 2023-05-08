@@ -5,7 +5,7 @@ def interact(current,inventory):
 			inventory.append("Broken Bottle")
 			print("\"Broken Bottle\" added to inventory")
 			interaction()
-	if current == (1,0,0):
+	elif current == (1,0,0):
 		if "Shiny Coin" not in inventory:
 			inventory.append("Shiny Coin")
 			print("\"Shiny Coin\" added to inventory")
