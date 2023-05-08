@@ -1,12 +1,14 @@
 from opening import *
 from FloorMaps import *
 from current_room import *
+from Interact import *
 #Items
 #opening
 opening()
 #Selection Menu
 c = None
 current = 0,0,0
+inventory = []
 while c != "q":
 	c = input(f"""
 {"|-------Menu-------|":^20}
@@ -208,6 +210,8 @@ while c != "q":
 				else:
 					y+= 1
 					current = floor,x,y
+	if c == "4":
+		interact(current,inventory)
 if c == "q":
 	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou chose to spend eternity in this mansion\n")
 
