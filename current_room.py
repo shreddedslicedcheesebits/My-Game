@@ -93,11 +93,8 @@ class CurrentRoom:
     |-------|
     |       |
     | Guest |
-    \Bedroom\ 
-    |       |
-    |   ?   |
-    |       |
-    |       |
+    \       |
+    |Bedroom|
     |       |
     |-------|"""
                 },

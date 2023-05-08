@@ -6,7 +6,7 @@ from current_room import *
 opening()
 #Selection Menu
 c = None
-current = 3,0,0
+current = 2,0,0
 while c != "q":
 	c = input(f"""
 {"|-------Menu-------|":^20}
