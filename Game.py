@@ -9,18 +9,21 @@ opening()
 c = None
 current = 1,0,0
 inventory = []
-while c != "q":
+door_open = False
+while c != "x":
 	c = input(f"""
 {"|-------Menu-------|":^20}
 {"View Inventory  1":^20}
 {"View Current room  2":^20}
 {"Show Floor maps  3":^20}
 {"Interact  4":^20}
+{"Go Upstairs e":^20}
+{"Go Downstairs q":^20}  
 {"Walk forward  w":^20}
 {"Walk Backward  s":^20}
 {"Walk Left  a":^20}
 {"Walk Right  d":^20}
-{"Surrender  q":^20}
+{"Surrender  x":^20}
 \nType Movement\n""")
 	if c == "2":
 		# Create an instance of the CurrentRoom class
@@ -46,6 +49,32 @@ while c != "q":
 			interaction()
 		except:
 			print("That wasn't a floor")
+			interaction()
+	if c == "1":
+		print(inventory)
+	if c == "e":
+		if current == (1,2,0):
+			print("You go up the Grand Staircase\nAs you climb the stairs, the room shrinks in size")
+			current = 2,0,0
+			interaction()
+		elif current == (2,0,0):
+			print("You go up the Grand Staircase\nAs you climb the stairs, the room grows even larger than the 1st floor")
+			current = 3,0,0
+			interaction()
+		else:
+			print("Cannot go upstairs here")
+			interaction()
+	if c == "q":
+		if current == (3,0,0):
+			print("You go down the Grand Staircase\nAs you decend, the room shrinks")
+			current = 2,0,0
+			interaction()
+		elif current == (2,0,0):
+			print("You go down the Grand Staircase\nAs you decend, the room grows to normal size")
+			current = 1,2,0
+			interaction()
+		else:
+			print("Cannot go downstairs here")
 			interaction()
 	if c == "w":
 		floor,x,y = current
@@ -211,8 +240,8 @@ while c != "q":
 					y+= 1
 					current = floor,x,y
 	if c == "4":
-		interact(current,inventory)
-if c == "q":
+		interact(current,inventory,door_open)
+if c == "x":
 	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou chose to spend eternity in this mansion\n")
 
 
