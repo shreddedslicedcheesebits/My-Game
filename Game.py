@@ -10,7 +10,8 @@ c = None
 current = 1,0,0
 inventory = []
 door_open = False
-while c != "x":
+end = False
+while c != "x" and end == False:
 	c = input(f"""
 {"|-------Menu-------|":^20}
 {"View Inventory  1":^20}
@@ -60,6 +61,10 @@ while c != "x":
 		elif current == (2,0,0):
 			print("You go up the Grand Staircase\nAs you climb the stairs, the room grows even larger than the 1st floor")
 			current = 3,0,0
+			interaction()
+		elif current == (0,0,0):
+			print("You walk back up the creaky steps of the basement and the door shuts behind you.")
+			current = 1,2,-1
 			interaction()
 		else:
 			print("Cannot go upstairs here")
@@ -240,11 +245,18 @@ while c != "x":
 					y+= 1
 					current = floor,x,y
 	if c == "4":
-		interact(current,inventory,door_open)
+		inventory, current, door_open, end = interact(current,inventory,door_open,end)
 if c == "x":
 	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou chose to spend eternity in this mansion\n")
-
-
-
-
-#starting room
+if end == True:
+	print("""
+▓██   ██▓ ▒█████   █    ██     █     █░ ██▓ ███▄    █  ▐██▌ 
+ ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▓█░ █ ░█░▓██▒ ██ ▀█   █  ▐██▌ 
+  ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒█░ █ ░█ ▒██▒▓██  ▀█ ██▒ ▐██▌ 
+  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░█░ █ ░█ ░██░▓██▒  ▐▌██▒ ▓██▒ 
+  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░░██▒██▓ ░██░▒██░   ▓██░ ▒▄▄  
+   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒    ░ ▓░▒ ▒  ░▓  ░ ▒░   ▒ ▒  ░▀▀▒ 
+ ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░      ▒ ░ ░   ▒ ░░ ░░   ░ ▒░ ░  ░ 
+ ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░      ░   ░   ▒ ░   ░   ░ ░     ░ 
+ ░ ░         ░ ░     ░            ░     ░           ░  ░    
+ ░ ░                                                         """)
