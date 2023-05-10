@@ -45,7 +45,7 @@ Type any key to close""")
 			with open(f"{name}.pkl", "rb") as f:
 				current, inventory, door_open, end = pickle.load(f)
 		except:
-			print(f"File {name} not found")
+			print(f"File \"{name}\" not found")
 			interaction()
 	if c == "3":
 		try:
