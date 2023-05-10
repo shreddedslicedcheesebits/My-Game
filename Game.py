@@ -25,7 +25,7 @@ while c != "x" and end == False:
 {"Show Floor maps  2":^20}
 {"Interact  3":^20}
 {"Save Game  4":^20}
-{"Load Game  ":^20}
+{"Load Game  5":^20}
 {"Go Upstairs e":^20}
 {"Go Downstairs q":^20}  
 {"Walk forward  w":^20}
@@ -34,11 +34,11 @@ while c != "x" and end == False:
 {"Walk Right  d":^20}
 {"Surrender  x":^20}\n""")
 		interaction()
-	if c == "5":
+	if c == "4":
 		name = input("What is the name of file you are saving?\n")
 		with open(f"{name}.pkl", "wb") as f:
 			pickle.dump((current, inventory, door_open, end), f)
-	if c == "6":
+	if c == "5":
 		try:
 			name = input("What is the name of the file?\n")
 			with open(f"{name}.pkl", "rb") as f:
@@ -46,7 +46,7 @@ while c != "x" and end == False:
 		except:
 			print(f"File \"{name}\" not found")
 			interaction()
-	if c == "3":
+	if c == "2":
 		try:
 			floor = int(input(f"""
 {"--Select a floor--":^20}
@@ -252,7 +252,7 @@ while c != "x" and end == False:
 				else:
 					y+= 1
 					current = floor,x,y
-	if c == "4":
+	if c == "3":
 		inventory, current, door_open, end = interact(current,inventory,door_open,end)
 if c == "x":
 	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou chose to spend eternity in this mansion\n")
