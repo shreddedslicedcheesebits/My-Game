@@ -2,6 +2,8 @@ from opening import *
 from FloorMaps import *
 from current_room import *
 from Interact import *
+import pickle
+
 #Items
 #opening
 opening()
@@ -26,6 +28,26 @@ while c != "x" and end == False:
 {"Walk Right  d":^20}
 {"Surrender  x":^20}
 \nType Movement\n""")
+	if c == "5":
+
+		# Define the variables to be saved
+		variable1 = "hello"
+		variable2 = [1, 2, 3]
+		variable3 = {"a": 1, "b": 2, "c": 3}
+
+# Save the variables to a binary file using pickle
+		with open("my_variables.pkl", "wb") as f:
+			pickle.dump((variable1, variable2, variable3), f)
+
+# Load the variables back into memory
+		with open("my_variables.pkl", "rb") as f:
+			variable1, variable2, variable3 = pickle.load(f)
+    
+# Print the variables to verify they were loaded correctly
+		print(variable1)
+		print(variable2)
+		print(variable3)
+
 	if c == "2":
 		# Create an instance of the CurrentRoom class
 		game_map = CurrentRoom()

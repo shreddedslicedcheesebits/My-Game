@@ -81,18 +81,6 @@ def interact(current,inventory,door_open,end):
 	elif current == (3,1,0):
 		if "Torch" not in inventory:
 			print("You look out over the balcony...")
-		else:
-			print("You see a hint appear in the sky")
-			if "Broken Bottle" in inventory:
-				print("\nPlace your piece of the broken bottle on the bottle on the dresser")
-			if "Rusty Key" in inventory:
-				print("\nThe Rusty key opens the door to the basement")
-			if "Red Gem" not in inventory:
-				print("The Red Gem can be found on the second floor")
-			if "Yellow Gem" not in inventory:
-				print("The Yellow Gem can be found on the 3rd floor")
-			if "Blue Gem" not in inventory:
-				print("The Blue Gem can be found on the 3rd floor")
 			interaction()
 		else:
 			print("You place the torch on the balcony rail and the sky starts to illuminate\nSuddently lighting flashes and in place of the torch you find a yellow gem")
@@ -108,9 +96,29 @@ def interact(current,inventory,door_open,end):
 				print("You enter a bright room with a golden door\nYou cannot open it")
 				interaction()
 			else:
-				print("You enter a bright room with a golden door\nYou place the Golden Key in the door and it opens\nYou Walk through and escape")
+				print("You enter a bright room with a golden door")
+				interaction()
+				print("You place the Golden Key in the door and it opens")
+				interaction()
+				print("You Walk through and escape")
 				end = True
 				interaction()
+	elif current == (2,1,0):
+		if "Guiding Coin" not in inventory:
+			print("")
+		else:
+			print("You see a hint appear in the sky")
+			if "Broken Bottle" in inventory:
+				print("\nPlace your piece of the broken bottle on the bottle on the dresser")
+			if "Rusty Key" in inventory:
+				print("\nThe Rusty key opens the door to the basement")
+			if "Red Gem" not in inventory:
+				print("The Red Gem can be found on the 2nd floor")
+			if "Yellow Gem" not in inventory:
+				print("The Yellow Gem can be found on the 3rd floor")
+			if "Blue Gem" not in inventory:
+				print("The Blue Gem can be found on the 3rd floor")
+			interaction()
 	else:
 		print("Cannot interact here")
 		interaction()
