@@ -20,6 +20,8 @@ while c != "x" and end == False:
 {"View Current room  2":^20}
 {"Show Floor maps  3":^20}
 {"Interact  4":^20}
+{"Save Game  5":^20}
+{"Load Game  6":^20}
 {"Go Upstairs e":^20}
 {"Go Downstairs q":^20}  
 {"Walk forward  w":^20}
@@ -29,31 +31,17 @@ while c != "x" and end == False:
 {"Surrender  x":^20}
 \nType Movement\n""")
 	if c == "5":
-
-		# Define the variables to be saved
-		variable1 = "hello"
-		variable2 = [1, 2, 3]
-		variable3 = {"a": 1, "b": 2, "c": 3}
-
-# Save the variables to a binary file using pickle
-		with open("my_variables.pkl", "wb") as f:
-			pickle.dump((variable1, variable2, variable3), f)
-
-# Load the variables back into memory
-		with open("my_variables.pkl", "rb") as f:
-			variable1, variable2, variable3 = pickle.load(f)
-    
-# Print the variables to verify they were loaded correctly
-		print(variable1)
-		print(variable2)
-		print(variable3)
+		name = input("What is the name of file you are saving?\n")
+		with open(f"{name}.pkl", "wb") as f:
+			pickle.dump((current, inventory, door_open, end), f)
+	if c == "6":
+		name = input("What is the name of the file?\n")
+		with open(f"{name}.pkl", "rb") as f:
+			current, inventory, door_open, end = pickle.load(f)
 
 	if c == "2":
-		# Create an instance of the CurrentRoom class
 		game_map = CurrentRoom()
-		# Retrieve the name of the current room from the map
 		current_room_name = game_map.get_room(current)
-		# Display the current room name
 		print(f"""{"You are currently in the:":^30}\n {current_room_name}""")
 		print(f"""\n{"Type any key to close":^20}""")
 		interaction()
