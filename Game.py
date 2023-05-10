@@ -40,9 +40,12 @@ Type any key to close""")
 		with open(f"{name}.pkl", "wb") as f:
 			pickle.dump((current, inventory, door_open, end), f)
 	if c == "6":
-		name = input("What is the name of the file?\n")
-		with open(f"{name}.pkl", "rb") as f:
-			current, inventory, door_open, end = pickle.load(f)
+		try:
+			name = input("What is the name of the file?\n")
+			with open(f"{name}.pkl", "rb") as f:
+				current, inventory, door_open, end = pickle.load(f)
+		except:
+			print("File not found")
 	if c == "3":
 		try:
 			floor = int(input(f"""
