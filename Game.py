@@ -46,6 +46,7 @@ Type any key to close""")
 				current, inventory, door_open, end = pickle.load(f)
 		except:
 			print("File not found")
+			interaction()
 	if c == "3":
 		try:
 			floor = int(input(f"""
