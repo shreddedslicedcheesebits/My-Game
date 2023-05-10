@@ -16,8 +16,8 @@ end = False
 while c != "x" and end == False:
 	game_map = CurrentRoom()
 	current_room_name = game_map.get_room(current)
-	print(f"""{"You are currently in the:":^30}\n {current_room_name}""")
-	c = input("\nPress \"m\" to view menu\nType Movement\n")
+	print(f"""\n\n\n\n\n\n\n\n\n\n\n\n\n\n{"You are currently in the:":^30}\n {current_room_name}""")
+	c = input("\nType \"m\" to view menu\nType Movement\n")
 	if c == "m":
 		print(f"""
 {"|-------Menu-------|":^20}
@@ -25,14 +25,15 @@ while c != "x" and end == False:
 {"Show Floor maps  2":^20}
 {"Interact  3":^20}
 {"Save Game  4":^20}
-{"Load Game  5":^20}
+{"Load Game  ":^20}
 {"Go Upstairs e":^20}
 {"Go Downstairs q":^20}  
 {"Walk forward  w":^20}
 {"Walk Backward  s":^20}
 {"Walk Left  a":^20}
 {"Walk Right  d":^20}
-{"Surrender  x":^20}\n""")
+{"Surrender  x":^20}\n
+Type any key to close""")
 		interaction()
 	if c == "5":
 		name = input("What is the name of file you are saving?\n")
@@ -59,7 +60,8 @@ while c != "x" and end == False:
 			print("That wasn't a floor")
 			interaction()
 	if c == "1":
-		print(inventory)
+		print(f"\nCurrent Inventory: {inventory}\nType any key to close")
+		interaction()
 	if c == "e":
 		if current == (1,2,0):
 			print("You go up the Grand Staircase\nAs you climb the stairs, the room shrinks in size")
