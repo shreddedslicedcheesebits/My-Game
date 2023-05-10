@@ -23,7 +23,7 @@ while c != "x" and end == False:
 {"|-------Menu-------|":^20}
 {"View Inventory  1":^20}
 {"Show Floor maps  2":^20}
-{"Interact  3":^20}
+{"Interact  f":^20}
 {"Save Game  4":^20}
 {"Load Game  5":^20}
 {"Go Upstairs e":^20}
@@ -252,7 +252,7 @@ while c != "x" and end == False:
 				else:
 					y+= 1
 					current = floor,x,y
-	if c == "3":
+	if c == "f":
 		inventory, current, door_open, end = interact(current,inventory,door_open,end)
 if c == "x":
 	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou chose to spend eternity in this mansion\n")
