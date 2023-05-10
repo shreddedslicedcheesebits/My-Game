@@ -32,8 +32,7 @@ while c != "x" and end == False:
 {"Walk Backward  s":^20}
 {"Walk Left  a":^20}
 {"Walk Right  d":^20}
-{"Surrender  x":^20}\n
-Type any key to close""")
+{"Surrender  x":^20}\n""")
 		interaction()
 	if c == "5":
 		name = input("What is the name of file you are saving?\n")
@@ -58,13 +57,12 @@ Type any key to close""")
 
 {"Floor":<} """))
 			floor_map(floor)
-			print(f"""\n{"Type any key to close":^20}""")
 			interaction()
 		except:
 			print("That wasn't a floor")
 			interaction()
 	if c == "1":
-		print(f"\nCurrent Inventory: {inventory}\nType any key to close")
+		print(f"\nCurrent Inventory: {inventory}")
 		interaction()
 	if c == "e":
 		if current == (1,2,0):
