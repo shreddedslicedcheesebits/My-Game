@@ -14,22 +14,26 @@ inventory = []
 door_open = False
 end = False
 while c != "x" and end == False:
-	c = input(f"""
+	game_map = CurrentRoom()
+	current_room_name = game_map.get_room(current)
+	print(f"""{"You are currently in the:":^30}\n {current_room_name}""")
+	c = input("\nPress \"m\" to view menu\nType Movement\n")
+	if c == "m":
+		print(f"""
 {"|-------Menu-------|":^20}
 {"View Inventory  1":^20}
-{"View Current room  2":^20}
-{"Show Floor maps  3":^20}
-{"Interact  4":^20}
-{"Save Game  5":^20}
-{"Load Game  6":^20}
+{"Show Floor maps  2":^20}
+{"Interact  3":^20}
+{"Save Game  4":^20}
+{"Load Game  5":^20}
 {"Go Upstairs e":^20}
 {"Go Downstairs q":^20}  
 {"Walk forward  w":^20}
 {"Walk Backward  s":^20}
 {"Walk Left  a":^20}
 {"Walk Right  d":^20}
-{"Surrender  x":^20}
-\nType Movement\n""")
+{"Surrender  x":^20}\n""")
+		interaction()
 	if c == "5":
 		name = input("What is the name of file you are saving?\n")
 		with open(f"{name}.pkl", "wb") as f:
@@ -38,13 +42,6 @@ while c != "x" and end == False:
 		name = input("What is the name of the file?\n")
 		with open(f"{name}.pkl", "rb") as f:
 			current, inventory, door_open, end = pickle.load(f)
-
-	if c == "2":
-		game_map = CurrentRoom()
-		current_room_name = game_map.get_room(current)
-		print(f"""{"You are currently in the:":^30}\n {current_room_name}""")
-		print(f"""\n{"Type any key to close":^20}""")
-		interaction()
 	if c == "3":
 		try:
 			floor = int(input(f"""
@@ -106,7 +103,6 @@ while c != "x" and end == False:
 					interaction()
 				else:
 					x+=1
-					print(floor,x,y)
 					current = floor,x,y
 		elif floor == 2:
 			if y != 0:
@@ -118,7 +114,6 @@ while c != "x" and end == False:
 					interaction()
 				else:
 					x+=1
-					print(floor,x,y)
 					current = floor,x,y
 		elif floor == 3:
 			if y != 0:
@@ -130,7 +125,6 @@ while c != "x" and end == False:
 					interaction()
 				else:
 					x+=1
-					print(floor,x,y)
 					current = floor,x,y
 	if c == "s":
 		floor,x,y = current

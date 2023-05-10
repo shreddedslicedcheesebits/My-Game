@@ -230,5 +230,4 @@ class CurrentRoom:
 
     def get_room(self, current):
         floor, x, y = current
-        print(floor, x, y)
         return self.room[floor][x][y]
