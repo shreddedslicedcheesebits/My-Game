@@ -105,7 +105,8 @@ def interact(current,inventory,door_open,end):
 				interaction()
 	elif current == (2,1,0):
 		if "Guiding Coin" not in inventory:
-			print("")
+			print("You look out over the balcony...")
+			interaction()
 		else:
 			print("You see a hint appear in the sky")
 			if "Broken Bottle" in inventory:
