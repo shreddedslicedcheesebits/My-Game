@@ -20,7 +20,7 @@ while c != "x" and end == False:
 		print(f"""\n\n\n\n\n\n\n\n\n\n\n\n\n\n{"You are currently in the:":^30}\n {current_room_name}""")
 		c = input("\nType \"m\" to view menu\nType Movement\n")
 		if c == "m":
-		print(f"""
+			print(f"""
 {"|-------Menu-------|":^20}
 {"View Inventory  1":^20}
 {"Show Floor maps  2":^20}
