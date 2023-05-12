@@ -89,7 +89,7 @@ def interact(current,inventory,door_open,end):
 			print("You look out over the balcony...")
 			interaction()
 		else:
-			if Yellow Gem not in inventory:
+			if "Yellow Gem" not in inventory:
 				print("You place the torch on the balcony rail and the sky starts to illuminate\nSuddently lighting flashes and in place of the torch you find a yellow gem")
 				interaction()
 				inventory.append("Yellow Gem")
