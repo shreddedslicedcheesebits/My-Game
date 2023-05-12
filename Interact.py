@@ -53,6 +53,7 @@ def interact(current,inventory,door_open,end):
 					interaction()
 				else:
 					print("You have already collected the Red Gem")
+					interaction()
 	elif current == (3,-1,1):
 		if "Broken Bottle" not in inventory:
 			print("You see a room with not much in it except for a broken bottle")
@@ -84,6 +85,7 @@ def interact(current,inventory,door_open,end):
 						inventory.append("Blue Gem")
 					else:
 						print("You have already collected the Blue Gem.")
+						interaction()
 	elif current == (3,1,0):
 		if "Torch" not in inventory:
 			print("You look out over the balcony...")
@@ -95,6 +97,7 @@ def interact(current,inventory,door_open,end):
 				inventory.append("Yellow Gem")
 			else:
 				print("You have already collected the Yellow Gem.")
+				interaction()
 	elif current == (0,0,1):
 		if "Blue Gem" and "Yellow Gem" and "Red Gem" not in inventory:
 			print("You find a sealed door with 3 holes in it")
